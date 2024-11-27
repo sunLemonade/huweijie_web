@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    
+    <!-- 使用CDN引入样式库 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background: var(--background-dark); color: var(--text-light);">
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">我的网站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#header">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">关于我</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">项目展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">联系方式</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页部分 -->
+    <section id="header" class="section d-flex align-items-center">
+        <!-- 加轮播图组件 -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/96262271_p0.jpg" alt="个人照片1" 
+                         data-swiper-parallax="-300"
+                         data-swiper-parallax-scale="1.2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/96538906_p0.jpg" alt="个人照片2"
+                         data-swiper-parallax="-300"
+                         data-swiper-parallax-scale="1.2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/105648310_p0.jpg" alt="个人照片3"
+                         data-swiper-parallax="-300"
+                         data-swiper-parallax-scale="1.2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/105648310_p1.jpg" alt="个人照片4"
+                         data-swiper-parallax="-300"
+                         data-swiper-parallax-scale="1.2">
+                </div>
+            </div>
+            <!-- 添加轮播图导航按钮 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- 添加轮播图分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- 关于我部分 -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5 neon-title">关于我</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-container">
+                        <img src="images/96262271_p0.jpg" alt="个人照片" class="img-fluid rounded profile-image">
+                        <div class="profile-overlay"></div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h3 class="neon-text">你的名字</h3>
+                    <p class="lead gradient-text">全栈开发工程师 / UI设计师</p>
+                    <div class="about-text">
+                        <p>这里是你的个人介绍，可以描述你的专业背景、技能特长和个人兴趣等。热爱编程与设计，专注于创造优秀的用户体验。</p>
+                    </div>
+                    <div class="skill-list mt-4">
+                        <div class="row">
+                            <div class="col-6 col-md-3">
+                                <div class="skill-item">
+                                    <i class="fas fa-code skill-icon"></i>
+                                    <h4 class="skill-title">Web开发</h4>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="skill-item">
+                                    <i class="fas fa-palette skill-icon"></i>
+                                    <h4 class="skill-title">UI设计</h4>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="skill-item">
+                                    <i class="fas fa-mobile-alt skill-icon"></i>
+                                    <h4 class="skill-title">移动开发</h4>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="skill-item">
+                                    <i class="fas fa-server skill-icon"></i>
+                                    <h4 class="skill-title">后端开发</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 添加聊天界面 -->
+    <div id="chat-toggle" class="btn btn-primary rounded-circle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div id="chat-container">
+        <div class="chat-header">
+            <h5 class="mb-0">在线对话</h5>
+            <button id="chat-close" class="btn-close"></button>
+        </div>
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+            <textarea id="message-input" class="form-control" rows="1" placeholder="输入消息..."></textarea>
+            <button id="send-message" class="btn btn-primary">发送</button>
+        </div>
+    </div>
+
+    <!-- 项目展示部分 -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5 neon-title">项目展示</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-img-top project-image">
+                            <img src="images/96538906_p0.jpg" alt="项目1">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">个人作品集网站</h5>
+                            <p class="card-text">使用现代前端技术栈开发的响应式个人作品展示网站，融合了 City Pop 风格设计。</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-img-top project-image">
+                            <img src="images/105648310_p0.jpg" alt="项目2">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">AI聊天机器人</h5>
+                            <p class="card-text">基于智谱AI开发的智能对话系统，支持自然语言处理和上下文理解。</p>
+                            <div class="project-tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">API</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-img-top project-image">
+                            <img src="images/105648310_p1.jpg" alt="项目3">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">移动端应用</h5>
+                            <p class="card-text">跨平台移动应用开发，采用 Flutter 框架，实现流畅的用户体验。</p>
+                            <div class="project-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Dart</span>
+                                <span class="tag">移动开发</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式部分 -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5">联系方式</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <div class="social-links mb-4">
+                        <a href="#" class="social-icons"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icons"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icons"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p>
+                        邮箱：your.email@example.com<br>
+                        电话：+86 123 4567 8900
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用CDN引入JavaScript库 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-encode"></script>
+    <script src="api.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
